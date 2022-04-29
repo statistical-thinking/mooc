@@ -8,7 +8,7 @@ b <- vector(length=R)
 for(i in 1:R){
   boot.data <- mtcars[sample(1:nrow(mtcars), size = 100, replace=T), ] 
   boot.result  <- summary(lm(boot.data$mpg~boot.data$wt))
-  b[i] <- boot.result$coefficients[2,1] # p-values in 2nd row and 1st column
+  b[i] <- boot.result$coefficients[2,1] # b-values in 2nd row and 1st column
 }
 summary(b)
 
