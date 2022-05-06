@@ -26,3 +26,28 @@ factors
 plot(factors)
 fa(data, nfactors=3, rotate="varimax")
 help(bfi)
+
+# Funktionsumfang von R erweitern
+library(cluster)
+
+# Deskriptive Statistik
+dim(iris)
+summary(iris)
+
+# Relevante Variablen z-transformieren 
+cluster_data <- scale(iris[c(1:4)])
+summary(cluster_data)
+
+# Within Cluster Sum of Squares (WSS) ermitteln
+wss <- (nrow(cluster_data)-1)*sum(apply(cluster_data,2,var))
+for (i in 2:10) wss[i] <- sum(kmeans(cluster_data, centers=i)$withinss)
+
+# Grafische Darstellung der Anzahl an Clustern mittels WSS
+plot(1:10, wss, type="c", xlab="Cluster", ylab="WSS", main="Clusteranzahl in Abhängigkeit von WSS")
+
+# K-Means Algorithmus anwenden
+k_means_cluster <- kmeans(iris[,-5], 3, nstart=30)
+clusplot(iris, k_means_cluster$cluster, color=TRUE, shade=TRUE, lines=0)
+
+# Präzision des K-Means Algorithmus
+table(iris$Species, k_means_cluster$cluster)
