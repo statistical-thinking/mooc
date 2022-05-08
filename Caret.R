@@ -31,7 +31,7 @@ metric <- "Accuracy"
 # Linear Discriminant Analysis trainieren
 fit.lda <- train(Species~., data=training, method="lda", metric=metric, trControl=control)
 
-# K-Nearest Neighbors trainieren
+# K-Nearest Neighbor trainieren
 fit.knn <- train(Species~., data=training, method="knn", metric=metric, trControl=control)
 
 # Random Forest trainieren
