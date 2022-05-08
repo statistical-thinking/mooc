@@ -2,16 +2,16 @@
 plot(swiss)
 neues_objekt <- plot(swiss)
 
-# Ohne Package corrplot
+# Ohne Package CORRPLOT
 cor(swiss)
 
-# Package corrplot installieren und aktivieren
+# Package CORRPLOT installieren und aktivieren
 install.packages(corrplot)
 library("corrplot")
 
-# Mit Package corrplot
+# Mit Package CORRPLOT
 noch_ein_neues_objekt <- cor(swiss)
 corrplot.mixed(noch_ein_neues_objekt)
 
-# Hilfe zum Package corrplot
+# Hilfe zum Package CORRPLOT
 help(corrplot)
