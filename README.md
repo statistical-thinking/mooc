@@ -1,5 +1,5 @@
 # Massive Open Online Course (MOOC)
-Einführung: Quantitative Datenanalyse mit R
+Datenanalyse mit R
 
 # Autoren
 Prof. Dr. Dennis Klinkhammer<br>
