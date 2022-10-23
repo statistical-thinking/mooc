@@ -6,13 +6,20 @@ dim(heart.data)
 summary(heart.data)
 boxplot(heart.data)
 
-# Univariate Statistik -> Verteilungsfunktion und Lagemaße
+# Univariate Statistik -> Dichtefunktion und Lagemaße
 hist(heart.data$heart.disease, freq=FALSE, breaks=40, ylim=c(0,0.10), xlim=c(-5,26))
 curve(dnorm(x, mean=mean(heart.data$heart.disease), sd=sd(heart.data$heart.disease)), add=TRUE, lwd=5)
 abline(v=10.17, col="red")   # Mean
 abline(v=10.38, col="green") # Median
 abline(v=6.75, col="blue")   # Modus
 legend(19, 0.1, legend=c("Mean", "Median", "Modus"), col=c("red", "green", "blue"), lty=1)
+
+#############################
+# Verteilungsfunktion (Bonus)
+x <- heart.data$heart.disease
+y <- pnorm(x, mean(x), sd(x))
+plot(x,y)
+#############################
 
 # Univariate Statstik -> Varianz und Standardabweichung (Teil 1)
 var(heart.data$heart.disease)
