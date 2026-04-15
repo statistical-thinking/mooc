@@ -2,7 +2,7 @@
 Datenanalyse mit R
 
 # Autoren
-Prof. Dr. Dennis Klinkhammer<br>
+Prof. Dr. habil. Dennis Klinkhammer<br>
 
 # Voraussetzungen
 Folgende Packages sollten in R installiert sein:<br>
